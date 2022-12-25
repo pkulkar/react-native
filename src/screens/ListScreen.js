@@ -9,19 +9,39 @@ const ListScreen = () => {
         { name: 'Friend 4'},
         { name: 'Friend 5'},
         { name: 'Friend 6'},
+        { name: 'Friend 7'},
+        { name: 'Friend 8'},
+        { name: 'Friend 9'},
+        { name: 'Friend 10'},
+        { name: 'Friend 11'},
+        { name: 'Friend 12'},
+        { name: 'Friend 13'},
+        { name: 'Friend 14'},
+        { name: 'Friend 15'},
+        { name: 'Friend 16'},
+        { name: 'Friend 17'},
+        { name: 'Friend 18'},
     ]
     return (
+        /**
+         * Refer react native docs for FlatList: https://reactnative.dev/docs/flatlist#required-renderitem
+         * to understand each properties mentioned
+         */
         <FlatList
+        horizontal
+        showsHorizontalScrollIndicator={false}
         keyExtractor={(friend) => friend.name} 
         data={friends}
         renderItem={({item}) => {
-            //element === {item: { name: 'Friend 1'}, index:0 }
-            //item === { name: 'Friend 1'}
-            return <Text>{item.name}</Text>
+            return <Text style={styles.textStyle}>{item.name}</Text>
         }}></FlatList>
     )
 }
 
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({
+    textStyle: {
+        marginVertical: 50
+    }
+})
 
 export default ListScreen;
